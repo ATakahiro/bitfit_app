@@ -25,6 +25,18 @@ class UserService {
       title: json['title'],
     );
   }
+
+  UserData() async {
+    final requestUrl = Uri.parse('https://zipcloud.ibsnet.co.jp/api/search?zipcode=5300057');
+    final response = await http.get(requestUrl);
+ 
+    if (response.statusCode == 200) {
+      Map<String, dynamic> map = jsonDecode(response.body);
+      return map;
+    } else {
+      throw Exception('Failed to load album');
+    }
+  }
 }
 
 Future<UserService> getUserData() async {

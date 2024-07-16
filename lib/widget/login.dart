@@ -6,6 +6,7 @@ class LoginWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color myColor = Color(0xffe5e7e4);
     bool _isObscure = true;
 
     // ロゴ
@@ -51,8 +52,18 @@ class LoginWidget extends StatelessWidget {
       children: [InputUser, InputPassword, button],
     );
 
-    final base = Column(
-      children: [logo, inputArea],
+    final base = MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Container(
+            color: myColor,
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              children: [logo, inputArea],
+            ),
+          ),
+        ),
+      ),
     );
 
     return base;
