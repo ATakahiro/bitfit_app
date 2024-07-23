@@ -1,4 +1,4 @@
-import 'package:bitfit_app/widget/side_menu.dart';
+import 'package:bitfit_app/test_widget/side_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -5,7 +5,7 @@ import 'package:bitfit_app/src/app.dart';
 
 main() {
   // final page = DashboardWidget();
-  // final page = LoginWidget();
-  // runApp(page);
-  runApp(const MyApp());
+  final page = LoginWidget();
+  runApp(page);
+  // runApp(const MyApp());
 }

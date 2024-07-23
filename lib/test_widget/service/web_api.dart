@@ -27,7 +27,8 @@ class UserService {
   }
 
   UserData() async {
-    final requestUrl = Uri.parse('https://zipcloud.ibsnet.co.jp/api/search?zipcode=5300057');
+    // final requestUrl = Uri.parse('https://zipcloud.ibsnet.co.jp/api/search?zipcode=5300057');
+    final requestUrl = Uri.parse('http://127.0.0.1:8000/seeds/athlete/api/athlete/1/');
     final response = await http.get(requestUrl);
  
     if (response.statusCode == 200) {

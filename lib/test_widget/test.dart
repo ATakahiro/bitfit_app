@@ -1,4 +1,4 @@
-import 'package:bitfit_app/widget/test.dart';
+import 'package:bitfit_app/test_widget/test.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,7 +33,7 @@ void main() {
   );
 
   // ウィジェット呼出し
-  final bananaWidget = BananaCounterWidget2(number: 888);
+  // final bananaWidget = BananaCounterWidget2(number: 888);
 
   // コンテイナー
   final con = Container(

@@ -1,6 +1,6 @@
-import 'package:bitfit_app/service/web_api.dart';
-import 'package:bitfit_app/src/address.dart';
-import 'package:bitfit_app/src/addressData.dart';
+
+import 'package:bitfit_app/src/user.dart';
+import 'package:bitfit_app/src/UsersData.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,11 +8,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<Address>(
-      future: AddressData().getAddressData().then((data) => Address.fromJson(data)),
+    return FutureBuilder<User>(
+      future: UsersData().getUserData().then((data) => User.fromJson(data)),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          final address = snapshot.data!;
+          final user = snapshot.data!;
           return Scaffold(
             appBar: AppBar(
               title: const Text('ホーム'),
@@ -20,36 +20,84 @@ class HomeScreen extends StatelessWidget {
             body: SingleChildScrollView(
               child: Column(
                 children: [
+                  // Center(
+                  //   child: Text(
+                  //     "Jsonデータ取得",
+                  //     style: TextStyle(fontSize: 32.0),
+                  //   ),
+                  // ),
                   Center(
                     child: Text(
-                      "Jsonデータ取得",
-                      style: const TextStyle(fontSize: 32.0),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "${address.address1}${address.address2}${address.address3}",
+                      "${user.username}",
                       style: const TextStyle(fontSize: 20.0),
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      "${address.kana1}${address.kana2}${address.kana3}",
-                      style: const TextStyle(fontSize: 20.0),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "${address.prefcode}",
-                      style: const TextStyle(fontSize: 20.0),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "${address.zipcode}",
-                      style: const TextStyle(fontSize: 20.0),
-                    ),
-                  ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.username_kana}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.team_id}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.affiliation}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.address_number}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.address}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.tel}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.email}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.admin_name}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.admin_name_kana}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.admin_tel}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     "${user.detail}",
+                  //     style: const TextStyle(fontSize: 20.0),
+                  //   ),
+                  // ),
                 ],
               )
             ),
